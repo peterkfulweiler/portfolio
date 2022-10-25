@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<html lang="en"></html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title> Peter Fulweiler</title>
+</head>
+
+<h1>Sculpture</h1>
+<hr>
+<body>
+    <div id = "container">
+        <video id="background-video" autoplay loop muted>
+    <source src= "./assets/doggy.mp4" type ="video/mp4">
+        </video>
+    </div>
+
+<script>
+    let video = document.querySelector("#background-video");
+
+    if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({video: true})
+        .then(function (stream) {
+            video.srcObject = stream;
+        })
+        .catch (function (error) {
+            console.log("something went wrong")
+        })
+    } else {
+        console.log("GetuserMedia not supported")
+    }
+</script>
+</body>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<html lang="en"></html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Peter Fulweiler</title>
+    <style>
+        #image {
+        display: none;
+    }
+    </style>
+</head>
+
+<h1>Digital Media</h1>
+<hr>
+
+<body>
+    <button type="button"
+        onclick="show()" id="btnID">
+        That Sinking Feeling
+    </button>
+    <div>
+        <img id="That Sinking Feeling" src="" />
+        </div>
+    <script>
+        function show() {
+ 
+            /* Get image and change value
+            of src attribute */
+            let image = document.getElementById("That Sinking Feeling");
+ 
+            image.src = "./assets/videogame.png"
+
+ 
+            document.getElementById("btnID")
+                    .style.display = "none";
+        }
+    </script>
+</body>

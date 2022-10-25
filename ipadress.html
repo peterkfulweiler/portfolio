@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<html lang="en"></html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Peter Fulweiler</title>
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+         
+          <script>
+         
+        /* Add "https://api.ipify.org?format=json" statement
+                   this will communicate with the ipify servers in
+                   order to retrieve the IP address $.getJSON will
+                   load JSON-encoded data from the server using a
+                   GET HTTP request */
+                    
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+             
+            // Setting text of element P with id gfg
+            $("#gfg").html(data.ip);
+        })
+     
+        </script>
+</head>
+<body>
+    <h1>IP address</h1>
+<hr>
+
+<center>
+    <h3>Public IP Address of user is:</h3>
+    <p id="gfg"></p>
+
+</center>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+
+</body>
